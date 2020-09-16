@@ -1,0 +1,23 @@
+<h1>This is 1 apartment</h1>
+
+ <h2><%= @apartment.address%></h2>
+<hr/>
+<p>Tenants:</p>
+<% @apartment.tenants.each do |tenant| %>
+  <a href="/tenants/<%=tenant.id%>">
+  <li><%= tenant.name %><br></li> 
+  </a>
+<% end %>
+
+<p>
+<form action="/apartments/<%= @apartment.id %>" method="post">
+<input type="hidden" name="_method" value="delete" />
+
+<input type="submit" value="Destroy Apartment & Leave Tenants Homeless :(" />
+</form>
+
+<form action="/apartments" method="get">
+<input type="submit" value="Return to Apartments Page" />
+</form>
+</p>
+

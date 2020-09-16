@@ -1,1 +1,16 @@
 
+<h1>Change Stuff!</h1>
+<hr>
+<form action="/tenants/<%=@tenant.id%>" method="post">
+    <input type= "hidden" name="_method" value="patch">
+    <label>Name:</label>
+    <input type='text' name="tenant[name]" value="<%=@tenant.name%>"><br>
+    <label>Address:</label>
+    <input type="text" name="tenant[apartment_id]" value="<%=@tenant.apartment_id%>">
+    <br/><input type="submit">
+</form>
+
+<form action="/tenants" method="get">
+<input type="submit" value="Return to Tenants Page" />
+</form>
+
